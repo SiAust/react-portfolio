@@ -4,10 +4,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 // project pages
 import Home from "./Home";
+import Links from "./links"
+import About from "./about"
+
+/* Projects */
 /* Points to index.js within folder by default */
 import Birthday from "./Birthday/";
 import Tours from "./Tours/";
 import Reviews from "./Reviews/";
+
 // Navbar
 import Navbar from "./Navbar";
 
@@ -28,6 +33,12 @@ function App() {
         </Route>
         <Route path="/tours">
           <Tours />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/links">
+          <Links />
         </Route>
       </Switch>
     </Router>
