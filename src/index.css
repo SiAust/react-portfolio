@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 
+============
+Variables
+============
+*/
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* 
+=============
+Global styles
+=============
+*/
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+
+  color: white;
 }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 3rem;
+
+  background: gray;
+
+  list-style-type: none;
+}
+
+li {
+  /* border: 1px white solid; */
+  /* display: flex;
+  align-items: center; */
+  background-color: gray;
+  height: 100%;
+  width: 5rem;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 3rem;
+}
+
+
+h1, h2, h3, h4, p {
+  color: black;
+}
+
+/* 
+==========
+Global classes
+==========
+*/
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.section {
+  width: 80%;
+  height: auto;
+  margin: 2rem auto;
+
+  text-align: center;
+  border: 1px gray solid;
+  border-radius: 3px;
+}
+
+
+
+/* Birthday classes */
