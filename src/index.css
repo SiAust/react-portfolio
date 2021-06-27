@@ -131,15 +131,15 @@ li a:hover,
 }
 
 .slide-in:nth-child(1) {
-  animation: slide 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+  animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 .slide-in:nth-child(2) {
-  animation: slide 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.3s forwards;
+  animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) 0.1s forwards;
 }
 
 .slide-in:nth-child(3) {
-  animation: slide 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.6s forwards;
+  animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) 0.2s forwards;
 }
 
 @keyframes slide {
