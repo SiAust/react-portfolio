@@ -11,9 +11,15 @@ const Navbar = () => {
           <div class="dropdown">
             <button class="dropbtn">Projects</button>
             <div class="dropdown-content">
-              <Link to="/birthday">Birthdays</Link>
-              <Link to="/tours">Tours</Link>
-              <Link to="/reviews">Reviews</Link>
+              <Link className="slide-in" to="/birthday">
+                Birthdays
+              </Link>
+              <Link className="slide-in" to="/tours">
+                Tours
+              </Link>
+              <Link className="slide-in" to="/reviews">
+                Reviews
+              </Link>
             </div>
           </div>
         </li>
