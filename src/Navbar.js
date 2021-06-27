@@ -9,7 +9,9 @@ const Navbar = () => {
         </li>
         <li>
           <div class="dropdown">
-            <button class="dropbtn">Projects</button>
+            <Link to="/projects" class="dropbtn">
+              Projects
+            </Link>
             <div class="dropdown-content">
               <Link className="slide-in" to="/birthday">
                 Birthdays

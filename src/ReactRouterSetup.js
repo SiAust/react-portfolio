@@ -2,10 +2,11 @@ import React from "react";
 // react router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-// project pages
+// Defualt pages
 import Home from "./Home";
-import Links from "./links"
-import About from "./about"
+import Links from "./links";
+import About from "./about";
+import Projects from "./project";
 
 /* Projects */
 /* Points to index.js within folder by default */
@@ -24,6 +25,9 @@ function App() {
         {/* exact prevents matching every path starting with "/" */}
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/projects">
+          <Projects />
         </Route>
         <Route path="/birthday">
           <Birthday />

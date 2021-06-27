@@ -9,6 +9,12 @@ Variables
   --clr-primary-2: hsl(205, 77%, 27%);
   --clr-primary-3: hsl(205, 72%, 37%);
   --clr-primary-4: hsl(205, 63%, 48%);
+
+  /* item colors */
+  --clr-item-1: hsl(535, 86%, 17%);
+  --clr-item-2: hsl(535, 77%, 27%);
+  --clr-item-3: hsl(535, 72%, 37%);
+  --clr-item-4: hsl(535, 63%, 48%);
 }
 
 /* 
@@ -77,6 +83,18 @@ Global classes
 .container {
   width: 100vw;
   height: 100vh;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 80%;
+  margin: 1rem auto;
+  background-color: var(--clr-item-1);
+  border-radius: 0.3rem;
+  padding: 1rem;
 }
 
 /* Dropdown menu */
@@ -161,3 +179,27 @@ li a:hover,
 }
 
 /* Birthday classes */
+
+.birthday {
+  position: relative;
+  top: 4rem;
+  opacity: 0;
+}
+
+@keyframes slide-up {
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.birthday img {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.birthday h4,
+.birthday p {
+  color: white;
+}
