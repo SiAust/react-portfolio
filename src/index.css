@@ -4,17 +4,17 @@ Variables
 ============
 */
 :root {
-  /* dark shades of primary color*/
-  --clr-primary-1: hsl(205, 86%, 17%);
-  --clr-primary-2: hsl(205, 77%, 27%);
-  --clr-primary-3: hsl(205, 72%, 37%);
-  --clr-primary-4: hsl(205, 63%, 48%);
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
 
-  /* item colors */
-  --clr-item-1: hsl(535, 86%, 17%);
-  --clr-item-2: hsl(535, 77%, 27%);
-  --clr-item-3: hsl(535, 72%, 37%);
-  --clr-item-4: hsl(535, 63%, 48%);
+    /* item colors */
+    --clr-item-1: hsl(535, 86%, 17%);
+    --clr-item-2: hsl(535, 77%, 27%);
+    --clr-item-3: hsl(535, 72%, 37%);
+    --clr-item-4: hsl(535, 63%, 48%);
 }
 
 /* 
@@ -23,47 +23,48 @@ Global styles
 =============
 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-  color: white;
+    color: white;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 body {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: var(--clr-primary-4);
 }
 
 ul {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 
-  width: 100%;
-  height: 3rem;
+    width: 100%;
+    height: 3rem;
 
-  background: var(--clr-primary-1);
+    background: var(--clr-primary-1);
 
-  list-style-type: none;
+    list-style-type: none;
 }
 
 li {
-  background-color: var(--clr-primary-1);
-  height: 100%;
-  width: 5rem;
+    background-color: var(--clr-primary-1);
+    height: 100%;
+    width: 5rem;
 }
 
 li a,
 .dropdown {
-  display: flex;
-  align-items: center;
-  background-color: var(--clr-primary-2);
-  justify-content: center;
-  width: 5rem;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-primary-2);
+    justify-content: center;
+    width: 5rem;
+    height: 100%;
 }
 
 h1,
@@ -71,7 +72,7 @@ h2,
 h3,
 h4,
 p {
-  color: black;
+    color: black;
 }
 
 /* 
@@ -81,125 +82,132 @@ Global classes
 */
 
 .container {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 .item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  width: 80%;
-  margin: 1rem auto;
-  background-color: var(--clr-item-1);
-  border-radius: 0.3rem;
-  padding: 1rem;
+    width: 80%;
+    margin: 1rem auto;
+    background-color: var(--clr-item-1);
+    border-radius: 0.3rem;
+    padding: 1rem;
 }
 
 /* Dropdown menu */
 
 .dropbtn {
-  /* display: flex; */
-  background-color: var(--clr-primary-2);
-  color: white;
+    /* display: flex; */
+    background-color: var(--clr-primary-2);
+    color: white;
 
-  font: inherit;
-  /* font-size: 16px; */
+    font: inherit;
+    /* font-size: 16px; */
 
-  border: none;
+    border: none;
 
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .dropdown {
-  position: relative;
+    position: relative;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0);
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
 
-  top: 100%;
+    top: 100%;
 
-  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-  z-index: 1;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
 }
 
 .dropdown-content a {
-  padding: 12px 16px;
+    padding: 12px 16px;
 }
 
 li a:hover,
 .dropdown-content a:hover,
 .dropdown:hover .dropbtn {
-  background-color: var(--clr-primary-3);
+    background-color: var(--clr-primary-3);
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .slide-in {
-  position: relative;
-  left: 100%;
+    position: relative;
+    left: 100%;
+    opacity: 0;
 }
 
 .slide-in:nth-child(1) {
-  animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+    animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 .slide-in:nth-child(2) {
-  animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) 0.1s forwards;
+    animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) 0.1s forwards;
 }
 
 .slide-in:nth-child(3) {
-  animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) 0.2s forwards;
+    animation: slide 0.2s cubic-bezier(0.4, 0, 1, 1) 0.2s forwards;
 }
 
 @keyframes slide {
-  100% {
-    left: 0;
-  }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
 }
 
 /* end dropdown menu */
 
 .section {
-  width: 80%;
-  height: auto;
-  margin: 2rem auto;
+    width: 80%;
+    height: auto;
+    margin: 2rem auto;
 
-  text-align: center;
-  border: 1px gray solid;
-  border-radius: 3px;
+    text-align: center;
+    border-radius: 3px;
 }
 
 /* Birthday classes */
 
 .birthday {
-  position: relative;
-  top: 4rem;
-  opacity: 0;
+    position: relative;
+    top: 4rem;
+    opacity: 0;
 }
 
 @keyframes slide-up {
-  100% {
-    top: 0;
-    opacity: 1;
-  }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 .birthday img {
-  border-radius: 50%;
-  height: 4rem;
-  width: 4rem;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
 }
 
 .birthday h4,
 .birthday p {
-  color: white;
+    color: white;
+}
+
+.birthday table {
+    background-color: var(--clr-item-2);
+    padding: 0.5rem;
+    border-spacing: 0.5rem;
 }
