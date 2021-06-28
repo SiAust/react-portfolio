@@ -15,6 +15,9 @@ Variables
     --clr-item-2: hsl(535, 77%, 27%);
     --clr-item-3: hsl(535, 72%, 37%);
     --clr-item-4: hsl(535, 63%, 48%);
+
+    /* Measures */
+    --border-rad: 0.3rem;
 }
 
 /* 
@@ -37,6 +40,13 @@ a {
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     background-color: var(--clr-primary-4);
+}
+
+button {
+    padding: 0.5rem;
+    color: black;
+
+    margin: 0.5rem;
 }
 
 ul {
@@ -73,6 +83,7 @@ h3,
 h4,
 p {
     color: black;
+    margin: 0.5rem;
 }
 
 /* 
@@ -94,7 +105,7 @@ Global classes
     width: 80%;
     margin: 1rem auto;
     background-color: var(--clr-item-1);
-    border-radius: 0.3rem;
+    border-radius: var(--border-rad);
     padding: 1rem;
 }
 
@@ -211,3 +222,94 @@ li a:hover,
     padding: 0.5rem;
     border-spacing: 0.5rem;
 }
+
+/* Form */
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    backdrop-filter: blur(5px);
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+form.birthday-form {
+    width: 60%;
+    height: auto;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 1rem;
+
+    background-color: var(--clr-item-3);
+
+    box-shadow: 0 0 4px black;
+
+    border: none;
+    border-radius: var(--border-rad);
+}
+
+.birthday-form p,
+.birthday-form h2 {
+    color: white;
+}
+
+.birthday-form input {
+    padding: 0.3rem;
+    color: black;
+    border: none;
+    border-radius: var(--border-rad);
+}
+
+.form-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0.3rem;
+
+    width: 60%;
+}
+
+.form-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+
+    width: 3rem;
+    height: 3rem;
+
+    border: none;
+    border-radius: 50%;
+
+    /* color: white; */
+    background-color: var(--clr-item-4);
+    border: 2px white solid;
+
+    color: black;
+}
+
+.form-close-btn span {
+    font-size: 2rem;
+}
+
+.form-close-btn:hover {
+    background-color: var(--clr-item-2);
+    border: 2px white solid;
+    cursor: pointer;
+}
+
+/* end Form */

@@ -2,17 +2,17 @@ import React from "react";
 // Components
 import Countdown from "./Countdown";
 
-const BirthdayCard = ({ id, name, age, birthday, image }) => {
+const BirthdayCard = ({ id, firstName, age, dob, image }) => {
     const animation = {
         animation: `slide-up 1s ease forwards ${id / 3}s`,
     };
     return (
         <div key={id} className="item birthday" style={animation}>
-            <img src={image} alt={name} />
-            <h4>{name}</h4>
+            <img src={image} alt={firstName} />
+            <h4>{firstName}</h4>
             <p>{age}</p>
-            <p>{birthday}</p>
-            <Countdown date={birthday} />
+            <p>{dob}</p>
+            <Countdown date={dob} />
         </div>
     );
 };

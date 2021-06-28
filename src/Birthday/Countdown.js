@@ -45,6 +45,7 @@ const Countdown = ({ date }) => {
 
     return (
         <table>
+            <caption>Countdown</caption>
             <tr>
                 <th>days</th>
                 <th>hours</th>
