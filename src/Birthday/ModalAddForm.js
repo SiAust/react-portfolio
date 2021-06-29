@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react from "react";
 
 const ModalForm = ({ toggleForm, handleSubmit, person, setPerson }) => {
     return (
@@ -28,10 +28,11 @@ const ModalForm = ({ toggleForm, handleSubmit, person, setPerson }) => {
                 </div>
 
                 <div className="form-control">
-                    <label htmlFor="dob">DOB (MM/DD/YYYY): </label>
+                    <label htmlFor="dob">DOB : </label>
                     <input
                         type="text"
                         id="dob"
+                        placeholder="MM/DD/YYYY"
                         value={person.dob}
                         onChange={(e) =>
                             setPerson(() => {
@@ -55,7 +56,9 @@ const ModalForm = ({ toggleForm, handleSubmit, person, setPerson }) => {
                     />
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" className="btn bday">
+                    Submit
+                </button>
             </form>
         </div>
     );

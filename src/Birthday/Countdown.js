@@ -54,8 +54,8 @@ const Countdown = ({ date }) => {
             </tr>
             <tr>
                 <td>{days}</td>
-                <td>{hours}</td>
-                <td>{minutes}</td>
+                <td>{hours} : </td>
+                <td>{minutes} : </td>
                 <td>{seconds}</td>
             </tr>
         </table>

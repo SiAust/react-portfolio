@@ -93,17 +93,44 @@ Global classes
 */
 
 .container {
-    width: 100vw;
+    /* overflows when width: 100vw; */
+    /* width: 100vw; */
     height: 100vh;
+}
+
+.section {
+    width: 80%;
+    height: auto;
+    margin: 2rem auto;
+
+    text-align: center;
+    border-radius: 3px;
+}
+
+.left-justify {
+    text-align: left;
+}
+
+.grid {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-around;
 }
 
 .item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 
     width: 80%;
-    margin: 1rem auto;
+    margin: 1rem 1rem;
     background-color: var(--clr-item-1);
     border-radius: var(--border-rad);
     padding: 1rem;
@@ -182,21 +209,22 @@ li a:hover,
 
 /* end dropdown menu */
 
-.section {
-    width: 80%;
-    height: auto;
-    margin: 2rem auto;
-
-    text-align: center;
-    border-radius: 3px;
-}
-
 /* Birthday classes */
 
 .birthday {
     position: relative;
     top: 4rem;
+
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    width: 20vw;
+    padding: 0;
     opacity: 0;
+
+    transition: all 1s;
+}
+
+.birthday:hover {
+    transform: scale(102%);
 }
 
 @keyframes slide-up {
@@ -206,10 +234,64 @@ li a:hover,
     }
 }
 
+.btn.bday {
+    background-color: var(--clr-item-2);
+    color: white;
+    border-radius: var(--border-rad);
+    border: 1px white solid;
+}
+
+.btn.bday:hover {
+    background-color: var(--clr-item-4);
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+
+    opacity: 0.3;
+
+    border-radius: var(--border-rad);
+    border: 1px white solid;
+    background-color: var(--clr-item-2);
+}
+
+.btn-group:hover {
+    opacity: 1;
+}
+
+.btn-group button {
+    opacity: 0.5;
+    margin: 0.2rem;
+    border: 1px transparent;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-group button:hover {
+    opacity: 1;
+    cursor: pointer;
+    /*  */
+}
+/* FontAwesomeIcon is rendered as a svg */
+.btn-group button svg {
+    font-size: 1rem;
+}
+
+.birthday-header {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--clr-item-4);
+}
+
 .birthday img {
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
+    border-radius: var(--border-rad) var(--border-rad) 0 0;
+    width: 100%;
+    height: 15rem;
 }
 
 .birthday h4,
@@ -218,6 +300,8 @@ li a:hover,
 }
 
 .birthday table {
+    position: relative;
+    bottom: -0.5rem;
     background-color: var(--clr-item-2);
     padding: 0.5rem;
     border-spacing: 0.5rem;
@@ -296,7 +380,7 @@ form.birthday-form {
     border-radius: 50%;
 
     /* color: white; */
-    background-color: var(--clr-item-4);
+    background-color: var(--clr-item-2);
     border: 2px white solid;
 
     color: black;
@@ -307,7 +391,7 @@ form.birthday-form {
 }
 
 .form-close-btn:hover {
-    background-color: var(--clr-item-2);
+    background-color: var(--clr-item-4);
     border: 2px white solid;
     cursor: pointer;
 }
