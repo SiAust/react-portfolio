@@ -1,14 +1,33 @@
 import react from "react";
 
-const ModalForm = ({ toggleForm, personToEdit, setPerson, submitEditForm }) => {
-    console.log({ personToEdit });
+// Context
+import { useBirthdayContext } from "./BirthdayContextProvider";
+
+const ModalForm = () => {
+    const {
+        toggleEditForm,
+        person,
+        // personToEditID,
+        // people,
+        setPerson,
+        submitEditForm,
+    } = useBirthdayContext();
+
+    // console.log(`personToEditID ${personToEditID}`);
+    // let personToEdit = people.filter((person) => {
+    //     console.log(person);
+    //     if (person.id === personToEditID) {
+    //         return person;
+    //     }
+    // })[0];
+    // console.log(`personToEdit ${{ ...person }}`);
     return (
         <div className="wrapper">
             <form className="birthday-form" onSubmit={submitEditForm}>
                 <button
                     type="button"
                     className="form-close-btn"
-                    onClick={toggleForm}
+                    onClick={toggleEditForm}
                 >
                     <span>&times;</span>
                 </button>
@@ -19,11 +38,11 @@ const ModalForm = ({ toggleForm, personToEdit, setPerson, submitEditForm }) => {
                     <input
                         type="text"
                         id="firstName"
-                        value={personToEdit.firstName}
+                        value={person.firstName}
                         onChange={(e) =>
                             setPerson(() => {
                                 return {
-                                    ...personToEdit,
+                                    ...person,
                                     firstName: e.target.value,
                                 };
                             })
@@ -36,14 +55,14 @@ const ModalForm = ({ toggleForm, personToEdit, setPerson, submitEditForm }) => {
                     <input
                         type="text"
                         id="dob"
-                        value={personToEdit.dob}
+                        value={person.dob}
                         placeholder="MM/DD/YYYY"
                     />
                 </div>
 
                 <div className="form-control">
                     <label htmlFor="image">Image URL : </label>
-                    <input type="text" id="image" value={personToEdit.image} />
+                    <input type="text" id="image" value={person.image} />
                 </div>
 
                 <button type="submit" className="btn bday">

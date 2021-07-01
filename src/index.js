@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
+// Context
+import { BirthdayContextProvider } from "./Birthday/BirthdayContextProvider";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <BirthdayContextProvider>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </BirthdayContextProvider>,
+    document.getElementById("root")
 );

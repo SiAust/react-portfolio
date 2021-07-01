@@ -41,7 +41,7 @@ const Countdown = ({ date }) => {
             daysRemainingToSec -
             minRemainingToSec
     );
-    console.log({ days, hours, minutes, seconds });
+    // console.log({ days, hours, minutes, seconds });
 
     return (
         <table>
