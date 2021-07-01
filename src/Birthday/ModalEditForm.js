@@ -57,12 +57,32 @@ const ModalForm = () => {
                         id="dob"
                         value={person.dob}
                         placeholder="MM/DD/YYYY"
+                        onChange={(e) =>
+                            setPerson(() => {
+                                return {
+                                    ...person,
+                                    dob: e.target.value,
+                                };
+                            })
+                        }
                     />
                 </div>
 
                 <div className="form-control">
                     <label htmlFor="image">Image URL : </label>
-                    <input type="text" id="image" value={person.image} />
+                    <input
+                        type="text"
+                        id="image"
+                        value={person.image}
+                        onChange={(e) =>
+                            setPerson(() => {
+                                return {
+                                    ...person,
+                                    image: e.target.value,
+                                };
+                            })
+                        }
+                    />
                 </div>
 
                 <button type="submit" className="btn bday">

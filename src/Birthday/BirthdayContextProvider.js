@@ -57,18 +57,18 @@ const BirthdayContextProvider = ({ children }) => {
         setShowEditForm(!showEditForm);
     };
     const submitEditForm = (e) => {
-        setPeople(() => {
+        setPeople(
             people.map((p) =>
                 p.id === person.id
                     ? {
                           ...p,
                           firstName: person.firstName,
                           dob: person.dob,
-                          age: person.age,
+                          image: person.image,
                       }
                     : p
-            );
-        });
+            )
+        );
         setShowEditForm(false);
     };
     // console.log(handleSubmit);
