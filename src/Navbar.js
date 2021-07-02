@@ -29,8 +29,8 @@ const Navbar = () => {
                             <Link className="slide-in" to="/tours">
                                 Tours
                             </Link>
-                            <Link className="slide-in" to="/reviews">
-                                Reviews
+                            <Link className="slide-in" to="/matchday">
+                                Matchday
                             </Link>
                         </div>
                     </div>

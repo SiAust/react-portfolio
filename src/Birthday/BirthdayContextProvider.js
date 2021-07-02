@@ -15,6 +15,12 @@ const BirthdayContextProvider = ({ children }) => {
     const [showAddForm, setShowAddForm] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
 
+    // const stopBodyScroll = () => {
+    //     const overflowState = document.body.style.overflow;
+    //     document.body.style.overflow =
+    //         overflowState == "hidden" ? "initial" : "hidden";
+    // };
+
     const toggleAddForm = () => setShowAddForm(!showAddForm);
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,11 +55,11 @@ const BirthdayContextProvider = ({ children }) => {
 
     const toggleEditForm = (id) => {
         setPerson(people.filter((person) => person.id === id)[0]);
-
         // personToEdit = people.filter((person) => person.id === id);
         // setPersonToEditID(id);
         // console.log(people.filter((person) => person.id === id)[0]);
         // console.log(`id ${id}`);
+        /* TODO bug, not emptying person obj? */
         setShowEditForm(!showEditForm);
     };
     const submitEditForm = (e) => {

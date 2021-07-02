@@ -1,6 +1,8 @@
 // import React, { useState, useEffect } from "react";
 /* UUID to implement workaround for animation delay */
 // import { v4 as uuid } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // Context
 import { useBirthdayContext } from "./BirthdayContextProvider";
@@ -52,7 +54,8 @@ const Birthday = () => {
                     type="button"
                     onClick={toggleAddForm}
                 >
-                    New Birthday
+                    <span>New Birthday</span>
+                    <FontAwesomeIcon icon={faPlus} />
                 </button>
             </div>
             <div className="section grid">

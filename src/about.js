@@ -1,12 +1,20 @@
 import React from "react";
+import Intro from "./Components/Intro";
 
 const About = () => {
-  return (
-    <div className='section'>
-      <h1>About Page</h1>
-      <p>Simon Aust is a developer from Bournemouth, UK</p>
-    </div>
-  );
+    const info = () => {
+        return <>Simon Aust is a developer from Bournemouth, UK</>;
+    };
+    return (
+        <>
+            <Intro
+                projectName="About"
+                projectSymbol="🤷"
+                projectLabel="person shrugging"
+                projectInfoText={info()}
+            />
+        </>
+    );
 };
 
 export default About;

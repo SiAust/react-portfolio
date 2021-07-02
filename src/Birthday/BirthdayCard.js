@@ -17,6 +17,13 @@ const BirthdayCard = ({
     const animation = {
         animation: `slide-up 0.5s ease forwards ${id / 3}s`,
     };
+    const currentAge = () => {
+        const today = new Date();
+        const bday = new Date(dob);
+        const age = today.getFullYear() - bday.getFullYear();
+        console.log(`age ${age}`);
+        return age;
+    };
     return (
         <div key={id} className="item birthday" style={animation}>
             <div className="btn-group">
@@ -35,7 +42,7 @@ const BirthdayCard = ({
             />
             <div className="birthday-header">
                 <h4>{firstName}</h4>
-                <p>{age}</p>
+                <p>{age || currentAge()}</p>
                 <p>{dob}</p>
             </div>
             <Countdown date={dob} />
