@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-
+// import React, { useState, useEffect } from "react";
 /* UUID to implement workaround for animation delay */
 // import { v4 as uuid } from "uuid";
 
@@ -9,11 +8,12 @@ import { useBirthdayContext } from "./BirthdayContextProvider";
 import BirthdayCard from "./BirthdayCard";
 import AddForm from "./ModalAddForm";
 import EditForm from "./ModalEditForm";
+import Emoji from "../Emoji";
 
 const Birthday = () => {
     const {
         people,
-        setPeople,
+        // setPeople,
         person,
         setPerson,
         showAddForm,
@@ -21,19 +21,24 @@ const Birthday = () => {
         handleSubmit,
         showEditForm,
         toggleEditForm,
-        personToEdit,
-        submitEditForm,
+        // personToEdit,
+        // submitEditForm,
         removeItem,
     } = useBirthdayContext();
     // console.log("context -" + useBirthdayContext());
     return (
         <>
-            <div className="section flex-row">
-                <h1>Birthdays</h1>
+            <div className="section">
+                <h1 className="left-justify">
+                    Birthdays <Emoji symbol="🎂" label="birthday cake" />
+                </h1>
                 <p className="left-justify">
                     This example app allows you to keep a list of people with a
                     countdown to their next birthday. Please use the button
-                    below to add a person.
+                    below to add a person. <br />
+                    React hooks such as <code>useState</code> and{" "}
+                    <code>useContext</code> help pass around the data through
+                    the component tree.
                 </p>
             </div>
             <div className="section">
@@ -42,7 +47,7 @@ const Birthday = () => {
                     type="button"
                     onClick={toggleAddForm}
                 >
-                    Add Birthday
+                    New Birthday
                 </button>
             </div>
             <div className="section grid">

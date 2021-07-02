@@ -1,7 +1,7 @@
-import react, { useEffect, useState } from "react";
+// import {  useState } from "react";
 
 const Countdown = ({ date }) => {
-    const [countdownTimer, setCountdownTimer] = useState();
+    // const [countdownTimer, setCountdownTimer] = useState();
 
     /* Original birthday */
     const birthday = new Date(date);

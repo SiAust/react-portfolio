@@ -10,7 +10,7 @@ const BirthdayContextProvider = ({ children }) => {
 
     const [people, setPeople] = useState(data);
     const [person, setPerson] = useState(emptyPersonObj);
-    const [personToEditID, setPersonToEditID] = useState();
+    // const [personToEditID, setPersonToEditID] = useState();
 
     const [showAddForm, setShowAddForm] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
