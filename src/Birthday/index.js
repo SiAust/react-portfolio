@@ -8,7 +8,7 @@ import { useBirthdayContext } from "./BirthdayContextProvider";
 import BirthdayCard from "./BirthdayCard";
 import AddForm from "./ModalAddForm";
 import EditForm from "./ModalEditForm";
-import Emoji from "../Emoji";
+import Intro from "../Components/Intro";
 
 const Birthday = () => {
     const {
@@ -25,10 +25,22 @@ const Birthday = () => {
         // submitEditForm,
         removeItem,
     } = useBirthdayContext();
-    // console.log("context -" + useBirthdayContext());
+
+    const info = () => {
+        return (
+            <>
+                This example app allows you to keep a list of people with a
+                countdown to their next birthday. Please use the button below to
+                add a person. <br />
+                React hooks such as <code>useState</code> and{" "}
+                <code>useContext</code> help pass around the data through the
+                component tree.
+            </>
+        );
+    };
     return (
         <>
-            <div className="section">
+            {/* <div className="section">
                 <h1 className="left-justify">
                     Birthdays <Emoji symbol="🎂" label="birthday cake" />
                 </h1>
@@ -40,7 +52,13 @@ const Birthday = () => {
                     <code>useContext</code> help pass around the data through
                     the component tree.
                 </p>
-            </div>
+            </div> */}
+            <Intro
+                projectName="Birthdays"
+                projectSymbol="🎂"
+                projectLabel="birthday cake"
+                projectInfoText={info()}
+            />
             <div className="section">
                 <button
                     className="btn bday"
