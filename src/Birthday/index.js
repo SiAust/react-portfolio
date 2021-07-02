@@ -40,19 +40,6 @@ const Birthday = () => {
     };
     return (
         <>
-            {/* <div className="section">
-                <h1 className="left-justify">
-                    Birthdays <Emoji symbol="🎂" label="birthday cake" />
-                </h1>
-                <p className="left-justify">
-                    This example app allows you to keep a list of people with a
-                    countdown to their next birthday. Please use the button
-                    below to add a person. <br />
-                    React hooks such as <code>useState</code> and{" "}
-                    <code>useContext</code> help pass around the data through
-                    the component tree.
-                </p>
-            </div> */}
             <Intro
                 projectName="Birthdays"
                 projectSymbol="🎂"

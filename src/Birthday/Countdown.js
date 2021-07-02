@@ -10,14 +10,17 @@ const Countdown = ({ date }) => {
 
     /* Check birthday hasn't passed, set year accordingly */
     const year =
-        birthday.getMonth() <= today.getMonth() &&
-        birthday.getDate() <= today.getDate()
+        birthday.getMonth() <= today.getMonth() ||
+        (birthday.getMonth() === today.getMonth() &&
+            birthday.getDate() <= today.getDate())
             ? today.getFullYear() + 1
             : today.getFullYear();
 
     const nextBirthday = new Date(
         `${birthday.getMonth() + 1}/${birthday.getDate()}/${year}`
     );
+    console.log({ birthday, today, nextBirthday });
+    // console.log(birthday.getMonth());
     /* Returns milliseconds so we divide by 1000 */
     const totalSecondsDiff =
         Math.abs(nextBirthday.getTime() - today.getTime()) / 1000;
@@ -42,6 +45,8 @@ const Countdown = ({ date }) => {
             minRemainingToSec
     );
     // console.log({ days, hours, minutes, seconds });
+    const yearPassedPercent = ((365 - days) / 365) * 100;
+    console.log(`yearPassedPercent - ${yearPassedPercent}`);
 
     return (
         <table>

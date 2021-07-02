@@ -30,6 +30,7 @@ const BirthdayCard = ({
             <img
                 src={image}
                 alt={firstName}
+                /* if the image doesn't load onError will fire, we pass in a function to set a default image */
                 onError={(image) => (image.target.src = blankImg)}
             />
             <div className="birthday-header">
