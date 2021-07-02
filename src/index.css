@@ -319,15 +319,41 @@ li a:hover,
 .birthday p {
     color: white;
 }
-
+/* 
 .birthday table {
     position: relative;
     bottom: -0.5rem;
     background-color: var(--clr-item-2);
     padding: 0.5rem;
     border-spacing: 0.5rem;
+} */
+
+.countdown {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: -0.5rem;
+    background-color: var(--clr-item-2);
+    padding: 0.5rem;
+    border-spacing: 0.5rem;
+    width: 12rem;
 }
 
+.progress-wrapper {
+    width: 100%;
+    border: 1px solid white;
+
+    margin-top: 0.5rem;
+}
+
+.progress-bar {
+    text-align: left;
+    background-color: var(--clr-item-4);
+}
+
+.progress-bar span {
+    margin: 0 0.2rem;
+}
 /* Form */
 
 .wrapper {

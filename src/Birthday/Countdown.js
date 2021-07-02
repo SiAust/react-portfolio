@@ -45,25 +45,36 @@ const Countdown = ({ date }) => {
             minRemainingToSec
     );
     // console.log({ days, hours, minutes, seconds });
-    const yearPassedPercent = ((365 - days) / 365) * 100;
+    const yearPassedPercent = `${Math.floor(
+        ((365 - days) / 365) * 100
+    )}`.substring(0, 2);
     console.log(`yearPassedPercent - ${yearPassedPercent}`);
-
+    const spanStyle = {
+        width: yearPassedPercent + "%",
+    };
     return (
-        <table>
-            <caption>Countdown</caption>
-            <tr>
-                <th>days</th>
-                <th>hours</th>
-                <th>min</th>
-                <th>sec</th>
-            </tr>
-            <tr>
-                <td>{days}</td>
-                <td>{hours} : </td>
-                <td>{minutes} : </td>
-                <td>{seconds}</td>
-            </tr>
-        </table>
+        <div className="countdown">
+            <table>
+                <caption>Countdown</caption>
+                <tr>
+                    <th>days</th>
+                    <th>hours</th>
+                    <th>min</th>
+                    <th>sec</th>
+                </tr>
+                <tr>
+                    <td>{days}</td>
+                    <td>{hours} : </td>
+                    <td>{minutes} : </td>
+                    <td>{seconds}</td>
+                </tr>
+            </table>
+            <div className="progress-wrapper">
+                <div className="progress-bar" style={spanStyle}>
+                    <span>{yearPassedPercent}%</span>
+                </div>
+            </div>
+        </div>
     );
 };
 
