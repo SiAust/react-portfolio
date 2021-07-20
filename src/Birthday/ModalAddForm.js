@@ -1,5 +1,3 @@
-// import react from "react";
-
 const ModalForm = ({ toggleForm, handleSubmit, person, setPerson }) => {
     return (
         <div className="wrapper">

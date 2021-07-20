@@ -48,7 +48,7 @@ const Birthday = () => {
                 projectLabel="birthday cake"
                 projectInfoText={info()}
             />
-            <div className="section">
+            <div className="section project">
                 <button
                     className="btn bday"
                     type="button"

@@ -12,7 +12,7 @@ import Projects from "./project";
 /* Points to index.js within folder by default */
 import Birthday from "./Birthday/";
 import Tours from "./Tours/";
-import Matchday from "./Matchday";
+import Players from "./Players";
 
 // Navbar
 import Navbar from "./Navbar";
@@ -32,8 +32,8 @@ function App() {
                 <Route path="/birthday">
                     <Birthday />
                 </Route>
-                <Route path="/matchday">
-                    <Matchday />
+                <Route path="/players">
+                    <Players />
                 </Route>
                 <Route path="/tours">
                     <Tours />

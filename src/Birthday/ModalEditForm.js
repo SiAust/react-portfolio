@@ -1,5 +1,3 @@
-// import react from "react";
-
 // Context
 import { useBirthdayContext } from "./BirthdayContextProvider";
 

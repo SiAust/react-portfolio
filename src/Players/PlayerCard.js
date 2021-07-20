@@ -1,0 +1,31 @@
+import Stats from "./Stats";
+
+const PlayerCard = ({
+    clazz,
+    firstName,
+    lastName,
+    squadNumber,
+    id,
+    text,
+    image,
+    stats,
+}) => {
+    return (
+        <article className={clazz}>
+            <div className="player-card">
+                <div className="player-card-img">
+                    <span>{squadNumber}</span>
+                    <img src={image} alt={`${firstName} ${lastName}`} />
+                </div>
+                <div className="player-card-header">
+                    <p>{firstName}</p>
+                    <p>{lastName}</p>
+                </div>
+                <p>{text}</p>
+                <Stats key={id} {...stats} />
+            </div>
+        </article>
+    );
+};
+
+export default PlayerCard;

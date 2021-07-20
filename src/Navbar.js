@@ -11,6 +11,12 @@ const Navbar = () => {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/links">Links</Link>
+                </li>
+                <li>
                     <div class="dropdown">
                         <Link to="/projects" class="dropbtn">
                             Projects
@@ -29,17 +35,11 @@ const Navbar = () => {
                             <Link className="slide-in" to="/tours">
                                 Tours
                             </Link>
-                            <Link className="slide-in" to="/matchday">
-                                Matchday
+                            <Link className="slide-in" to="/players">
+                                Players
                             </Link>
                         </div>
                     </div>
-                </li>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-                <li>
-                    <Link to="/links">Links</Link>
                 </li>
             </ul>
         </nav>
