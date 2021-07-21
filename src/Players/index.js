@@ -33,8 +33,75 @@ const PlayerStats = () => {
         return index;
     };
 
+    function dragPlayerCard(e) {
+        // console.log(e.target);
+        // console.log(e.target.id);
+        // console.log(`x : ${e.clientX}`);
+        const playerCard = e.target;
+        let x = 0;
+
+        let dragX = e.clientX;
+        document.onmousemove = onMouseMove;
+        document.onmouseup = onMouseUp;
+
+        function onMouseMove(e) {
+            // console.log(`moving ${e.target}`);
+            // console.log(`x : (${dragX} - ${e.clientX}) = ${x}`);
+
+            x = e.clientX - dragX;
+            if (x <= -100) {
+                // console.log("minus 100");
+                slideLeft();
+                /* hide the visible shift back to left: 0 
+                if we're transitioning between cards*/
+                if (index === data.length - 1) {
+                    playerCard.style.left = 0;
+                    // console.log("bump left");
+                } else {
+                    setTimeout(() => {
+                        playerCard.style.left = 0;
+                    }, 1000);
+                }
+
+                return;
+            }
+            if (x >= 100) {
+                // console.log("plus 100");
+                slideRight();
+                /* hide the visible shift back to left: 0 
+                if we're transitioning between cards */
+                if (index === 0) {
+                    playerCard.style.left = 0;
+                    // console.log("bump right");
+                } else {
+                    setTimeout(() => {
+                        playerCard.style.left = 0;
+                    }, 1000);
+                }
+
+                return;
+            }
+            playerCard.style.left = x + "px";
+        }
+
+        function onMouseUp(e) {
+            // console.log("onMouseUp");
+
+            if (x < 0 && x > -100) {
+                // console.log("not far enough left");
+                playerCard.style.left = 0;
+            }
+            if (x > 0 && x < 100) {
+                // console.log("not far enough right");
+                playerCard.style.left = 0;
+            }
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
     const info = () => {
-        return <>A carousel of football players.</>;
+        return <>A responsive carousel of football players.</>;
     };
     return (
         <>
@@ -70,6 +137,7 @@ const PlayerStats = () => {
                         return (
                             <>
                                 <PlayerCard
+                                    dragFunction={dragPlayerCard}
                                     key={player.id}
                                     clazz={classes}
                                     {...player}

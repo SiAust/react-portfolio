@@ -621,6 +621,9 @@ form.birthday-form {
 }
 
 .player-card {
+    /* for drag event */
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -630,6 +633,14 @@ form.birthday-form {
     background-color: white;
     box-shadow: 0 0 4px 2px gray;
     color: black;
+
+    /* for drag event */
+    user-select: none;
+    /* transition: left 0.2s; */
+}
+
+.player-card:hover {
+    cursor: move;
 }
 
 .player-card-img {
@@ -643,6 +654,9 @@ form.birthday-form {
     box-shadow: 6px -2px 0 2px var(--clr-player-4);
     overflow: hidden;
     border-radius: 50%;
+
+    /* for drag event */
+    pointer-events: none;
 }
 
 .player-card-img img {
@@ -666,6 +680,9 @@ form.birthday-form {
 
     text-transform: capitalize;
     font-size: 2rem;
+
+    /* for drag event */
+    pointer-events: none;
 }
 
 .player-card-header p:nth-child(2) {
@@ -676,6 +693,9 @@ form.birthday-form {
 .player-card p,
 .player-card h3 {
     color: black;
+
+    /* for drag event */
+    pointer-events: none;
 }
 
 .stats {
@@ -684,6 +704,9 @@ form.birthday-form {
 
     width: 80%;
     margin: 0 auto;
+
+    /* for drag event */
+    pointer-events: none;
 }
 
 .stat-item {
@@ -777,12 +800,15 @@ form.birthday-form {
     border-radius: 50%;
 
     background-color: var(--clr-player-4);
-    transition: all 1s;
+    transition: all 0.5s;
 
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
     z-index: 1;
 }
 
 .active-dot {
+    box-shadow: 0 0 0 2px var(--clr-player-4);
+
     background-color: var(--clr-player-1);
 }
 

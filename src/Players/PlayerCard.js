@@ -9,10 +9,14 @@ const PlayerCard = ({
     text,
     image,
     stats,
+    dragFunction,
 }) => {
     return (
-        <article className={clazz}>
-            <div className="player-card">
+        <article className={clazz} onMouseDown={(e) => dragFunction(e)}>
+            <div
+                className="player-card"
+                // draggable="true"
+            >
                 <div className="player-card-img">
                     <span>{squadNumber}</span>
                     <img src={image} alt={`${firstName} ${lastName}`} />
