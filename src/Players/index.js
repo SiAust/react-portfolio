@@ -39,16 +39,23 @@ const PlayerStats = () => {
         // console.log(`x : ${e.clientX}`);
         const playerCard = e.target;
         let x = 0;
+        console.log(e.type);
+        let dragX = e.type === "touchstart" ? e.touches[0]?.clientX : e.clientX;
 
-        let dragX = e.clientX;
-        document.onmousemove = onMouseMove;
-        document.onmouseup = onMouseUp;
+        document.onmousemove = onPointerMover;
+        document.onmouseup = onPointerUp;
 
-        function onMouseMove(e) {
+        /* handle touch events */
+        document.ontouchmove = onPointerMover;
+        document.ontouchend = onPointerUp;
+
+        function onPointerMover(e) {
             // console.log(`moving ${e.target}`);
             // console.log(`x : (${dragX} - ${e.clientX}) = ${x}`);
 
-            x = e.clientX - dragX;
+            x =
+                (e.type === "touchmove" ? e.touches[0].clientX : e.clientX) -
+                dragX;
             if (x <= -100) {
                 // console.log("minus 100");
                 slideLeft();
@@ -84,7 +91,7 @@ const PlayerStats = () => {
             playerCard.style.left = x + "px";
         }
 
-        function onMouseUp(e) {
+        function onPointerUp(e) {
             // console.log("onMouseUp");
 
             if (x < 0 && x > -100) {
@@ -111,10 +118,12 @@ const PlayerStats = () => {
                 projectLabel="tick mark"
                 projectInfoText={info()}
             />
-            <section className="section players ">
-                <SectionBreak title="Players" color="blue" />
+            <section className="section main players ">
+                <SectionBreak title="Players" color="hsl(278, 63%, 48%)" />
+
                 <section className="section-center">
-                    {/* dot array */}
+                    {/* Container for the array of dots symbolizing the position
+                    of the visible card in the carousel */}
                     <div className="dot-array">
                         <div className="hr"></div>
                         {data.map((player) => {
@@ -126,6 +135,7 @@ const PlayerStats = () => {
                         })}
                     </div>
 
+                    {/* Creating the cards for the carousel */}
                     {data.map((player, teamIndex) => {
                         const classes = `slide ${
                             teamIndex === index

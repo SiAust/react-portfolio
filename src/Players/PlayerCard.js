@@ -12,7 +12,11 @@ const PlayerCard = ({
     dragFunction,
 }) => {
     return (
-        <article className={clazz} onMouseDown={(e) => dragFunction(e)}>
+        <article
+            className={clazz}
+            onMouseDown={(e) => dragFunction(e)}
+            onTouchStart={(e) => dragFunction(e)}
+        >
             <div
                 className="player-card"
                 // draggable="true"

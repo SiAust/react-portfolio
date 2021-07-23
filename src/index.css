@@ -91,7 +91,7 @@ ul {
 li {
     background-color: var(--clr-primary-1);
     height: 3rem;
-    width: 5rem;
+    width: 100%;
 }
 
 li a,
@@ -100,7 +100,7 @@ li a,
     align-items: center;
     background-color: var(--clr-primary-2);
     justify-content: center;
-    width: 5rem;
+    width: 100%;
     height: 100%;
 }
 
@@ -123,7 +123,14 @@ nav {
     /* display: flex; */
     position: absolute;
     top: 0;
+
+    width: 6rem;
 }
+
+.nav-item svg {
+    display: none;
+}
+
 /* 
 ==========
 Global classes
@@ -225,6 +232,8 @@ Global classes
     display: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
+
+    width: 100%;
 
     top: 0;
     left: 100%;
@@ -640,7 +649,7 @@ form.birthday-form {
 }
 
 .player-card:hover {
-    cursor: move;
+    cursor: pointer;
 }
 
 .player-card-img {
@@ -787,7 +796,8 @@ form.birthday-form {
 
     margin: 0 auto;
 
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     height: 2rem;
 
     /* background-color: pink; */
@@ -809,7 +819,7 @@ form.birthday-form {
 .active-dot {
     box-shadow: 0 0 0 2px var(--clr-player-4);
 
-    background-color: var(--clr-player-1);
+    background: var(--clr-primary-4);
 }
 
 .hr {
@@ -908,4 +918,79 @@ form.birthday-form {
     height: 0.5rem;
 
     clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0 100%);
+}
+
+/* ============= */
+/* Mobile design */
+/* ============= */
+
+@media screen and (max-width: 768px) {
+    .section.intro {
+        width: 70%;
+        margin: 0 auto 2rem auto;
+    }
+
+    .dot-array {
+        top: 5%;
+    }
+
+    .slide.nextSlide {
+        left: 130%;
+    }
+
+    .slide.prevSlide {
+        left: -30%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    /* nav bar */
+
+    nav {
+        width: 4rem;
+    }
+
+    .nav-item p {
+        display: none;
+    }
+
+    .nav-item svg {
+        display: inline;
+        font-size: 1.5rem;
+    }
+
+    .dot-array {
+        width: 90%;
+        top: 0;
+    }
+
+    .section.main {
+        width: 98%;
+    }
+    /* =============== */
+    /* player carousel */
+    /* =============== */
+
+    /* player cards */
+    .player-card {
+        width: 25rem;
+    }
+
+    .slide.nextSlide {
+        left: 150%;
+    }
+
+    .slide.prevSlide {
+        left: -50%;
+    }
+
+    /* carousel buttons */
+
+    .btn.matchday.slider-left {
+        display: none;
+    }
+
+    .btn.matchday.slider-right {
+        display: none;
+    }
 }

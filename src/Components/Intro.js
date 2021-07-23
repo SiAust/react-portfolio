@@ -2,7 +2,7 @@ import Emoji from "../Emoji";
 
 const Intro = (props) => {
     return (
-        <div className="section">
+        <div className="section intro">
             <h1 className="left-justify">
                 {props.projectName}{" "}
                 <Emoji
