@@ -1,32 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+    faHome,
+    faLink,
+    faInfoCircle,
+    faLaptopCode,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
     return (
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" className="nav-item">
+                        <p>Home</p>
+                        <FontAwesomeIcon icon={faHome} />
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about" className="nav-item">
+                        <p>About</p>
+                        <FontAwesomeIcon icon={faInfoCircle} />
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/links">Links</Link>
+                    <Link to="/links" className="nav-item">
+                        <p>Links</p>
+                        <FontAwesomeIcon icon={faLink} />
+                    </Link>
                 </li>
                 <li>
                     <div class="dropdown">
-                        <Link to="/projects" class="dropbtn">
-                            Projects
-                            <FontAwesomeIcon
-                                icon={faChevronRight}
-                                style={{
-                                    fontSize: ".6rem",
-                                    margin: ".3rem",
-                                }}
-                            />
+                        <Link to="/projects" class="dropbtn nav-item">
+                            <p>Projects &#10095;</p>
+                            <FontAwesomeIcon icon={faLaptopCode} />
                         </Link>
                         <div class="dropdown-content">
                             <Link className="slide-in" to="/birthday">
